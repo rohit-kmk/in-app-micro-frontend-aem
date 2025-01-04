@@ -1,0 +1,26 @@
+{
+  "name": "microfrontend-example",
+  "private": true,
+  "workspaces": [
+    "product",
+    "order",
+    "delivery",
+    "main"
+  ],
+  "scripts": {
+    "exec": "concurrently \"yarn workspace product start\" \"yarn workspace order start\" \"yarn workspace delivery start\" \"yarn workspace main start\"",
+    "updatelockfile": "yarn install && yarn workspaces run build && npm install --package-lock-only",
+    "build": "mkdir dist && yarn workspaces run build",
+    "serve": "serve -l 3000 dist/",
+	"buildturbo": "turbo run build"
+  },
+  "dependencies": {
+    "concurrently": "^7.0.0",
+    "serve": "^14.2.4",
+    "yarn": "^1.22.22"
+  },
+  "devDependencies": {
+    "turbo": "^2.3.3"
+  },
+  "packageManager": ">=npm@8.19.4"
+}
