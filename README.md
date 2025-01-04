@@ -49,7 +49,7 @@ These modules expose the microfrontends for product, delivery and order function
     })
 ```
 
-Please ensure that output file and chunknames follow a specific naming convention with appname add as prefix <appname>-<name>.bundle.js, <appname>-<name>.bundle.css:
+Please ensure that output file and chunknames follow a specific naming convention with appname add as prefix *appname*-*name*.bundle.js, *appname*-*name*.bundle.css:
 ```javascript
 product-[name].bundle.js
 product-[name].bundle.css
@@ -58,10 +58,12 @@ This will ensure that in dist folder we have unique names for module files.
 
 Following scripts will be used to **build** and **run** the individual microfrontends:
 `yarn run build`
+
 `yarn run start`
 
-**turbo** will also use these scripts to build and start the mircrofrontend at global/monorepo level
+**turbo** will also use these scripts to build and start the mircrofrontend at global/monorepo level:
 `turbo run build`
+
 `turbo run start`
 
 ```json
